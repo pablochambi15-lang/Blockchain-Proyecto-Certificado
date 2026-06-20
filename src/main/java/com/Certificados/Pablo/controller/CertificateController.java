@@ -4,8 +4,11 @@ package com.Certificados.Pablo.controller;
 
 import com.Certificados.Pablo.dto.CertificateRequest;
 import com.Certificados.Pablo.dto.CertificateResponse;
+import com.Certificados.Pablo.entity.CertificateEntity;
 import com.Certificados.Pablo.service.CertificateService;
 import com.Certificados.Pablo.service.BlockchainService;
+
+import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -39,4 +42,9 @@ public class CertificateController {
 
         return blockchainService.verificarCertificado(id);
     }
+    @GetMapping
+    public List<CertificateEntity> obtenerTodos() {
+
+    return certificateService.obtenerTodos();
+}
 }

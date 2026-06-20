@@ -1,13 +1,21 @@
 package com.Certificados.Pablo.dto;
 
+import jakarta.validation.constraints.NotBlank;
 
 public class CertificateRequest {
 
+    @NotBlank(message = "El ID del certificado es obligatorio")
     private String certificateId;
+
+    @NotBlank(message = "El nombre del alumno es obligatorio")
     private String studentName;
+
+    @NotBlank(message = "El curso es obligatorio")
     private String courseName;
+
+    @NotBlank(message = "La institución es obligatoria")
     private String institutionName;
-    private String certificateHash;
+
     public String getCertificateId() {
         return certificateId;
     }
@@ -32,12 +40,5 @@ public class CertificateRequest {
     public void setInstitutionName(String institutionName) {
         this.institutionName = institutionName;
     }
-    public String getCertificateHash() {
-        return certificateHash;
-    }
-    public void setCertificateHash(String certificateHash) {
-        this.certificateHash = certificateHash;
-    }
-
     // getters y setters
 }

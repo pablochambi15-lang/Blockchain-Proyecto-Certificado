@@ -57,7 +57,8 @@ public class BlockchainService {
     }
 
     public String emitirCertificado(
-        CertificateRequest request) throws Exception {
+        CertificateRequest request,
+        String certificateHash) throws Exception {
 
     TransactionReceipt receipt =
             contrato.issueCertificate(
@@ -67,7 +68,7 @@ public class BlockchainService {
                     request.getCourseName(),
                     request.getInstitutionName(),
                     BigInteger.valueOf(System.currentTimeMillis()),
-                    request.getCertificateHash()
+                    certificateHash
 
             ).send();
 
